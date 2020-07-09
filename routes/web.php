@@ -20,3 +20,10 @@ Route::delete('/books/{book}', 'BooksController@destroy');
 Route::post('/authors', 'AuthorsController@store');
 Route::patch('/authors/{author}', 'AuthorsController@update');
 Route::delete('/authors/{author}', 'AuthorsController@destroy');
+
+Route::post('/checkout/{book}', 'CheckoutBookController@store');
+Route::post('/checkin/{book}', 'CheckinBookController@store');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
