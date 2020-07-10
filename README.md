@@ -1,4 +1,7 @@
 ### Laravel with TDD test 
+This project simulate a library system for reservation with books, authors and users. 
+You can create a book informing a name and author. 
+You can also checkout and checkin a book with a user. 
 
 Run the command in the docker directory
 ```sh 
