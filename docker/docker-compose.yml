@@ -1,0 +1,22 @@
+version: '3'
+services:
+
+  #PHP Service
+  php-fpm:
+    build: ./php
+    image: felipemeddeiros/phpfpm-composer:api-test
+    container_name: php-fpm
+    restart: unless-stopped
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    volumes:
+      - ../:/var/www
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - app-network
+
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
